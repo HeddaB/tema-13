@@ -9,6 +9,8 @@ const taBeskrivelse = document.querySelector("#taBeskrivelse");
 const inpURL = document.querySelector("#inpURL");
 const ulBilder = document.querySelector("#ulBilder");
 const infoOpplasting = document.querySelector("#infoOpplasting");
+const foto = document.querySelector("#foto");
+
 
 // Firebase
 const db = firebase.database();
@@ -113,3 +115,18 @@ skjemaInfo.addEventListener("submit", lagreProsjekt);
 // Event Listeners
 inpBilde.addEventListener("change", visBildeinfo);
 skjemaBilder.addEventListener("submit", lastOppBilde);
+
+
+let user;
+
+// track the Auth state across all pages
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        //welcomeMessage.inneText = "Welcome " + user.displayName; 
+        foto.src = user.photoURL; 
+        console.log(user); 
+    }  else {
+        document.location.href = "login.html"; 
+    }
+  });
+

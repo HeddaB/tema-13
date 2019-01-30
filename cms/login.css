@@ -1,0 +1,16 @@
+
+body {
+    background-color: lightblue;
+}
+h1 {
+    font-family: sans-serif;
+    color: rgb(47, 170, 192);
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+h2 {
+    font-family: sans-serif;
+    color: lightcyan;
+    text-align: center;  
+}

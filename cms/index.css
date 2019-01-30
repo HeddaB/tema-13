@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     padding: 1rem;
 }
@@ -40,6 +41,14 @@ h1 strong {
 
 .slide-in {
     animation: slide 1s ease-in-out;
+}
+
+#foto {
+    border-radius: 50%;
+    width: 120px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
 }
 
 #overlay {
