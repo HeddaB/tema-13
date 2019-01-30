@@ -15,12 +15,26 @@ const foto = document.querySelector("#foto");
 // Firebase
 const db = firebase.database();
 const storage = firebase.storage();
-
 const prosjekter = db.ref("prosjekter");
+
 
 
 // Et array til å lagre bildene før vi legger inn i databasen
 const bilderSomSkalLastesOpp = [];
+
+let user;
+
+// track the Auth state across all pages
+firebase.auth().onAuthStateChanged(newUser => {
+    if (newUser) {
+        //welcomeMessage.inneText = "Welcome " + user.displayName; 
+        user = newUser;
+        foto.src = newUser.photoURL; 
+        console.log(user); 
+    }  else {
+        document.location.href = "login.html"; 
+    }
+  });
 
 
 // En hjelpefunksjon som jeg fant på nett for å regne om filstørrelser
@@ -90,8 +104,8 @@ function lastOppBilde(evt) {
 }
 
 function lagreProsjekt(evt) {
-    evt.preventDefault();
-
+    evt.preventDefault();    
+    
     prosjekter.push({
         bilder: bilderSomSkalLastesOpp,
         kunde: inpKunde.value,
@@ -117,16 +131,5 @@ inpBilde.addEventListener("change", visBildeinfo);
 skjemaBilder.addEventListener("submit", lastOppBilde);
 
 
-let user;
 
-// track the Auth state across all pages
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        //welcomeMessage.inneText = "Welcome " + user.displayName; 
-        foto.src = user.photoURL; 
-        console.log(user); 
-    }  else {
-        document.location.href = "login.html"; 
-    }
-  });
 
