@@ -1,0 +1,725 @@
+	/* ------------------------------------------------------------------------------
+	Typography
+-------------------------------------------------------------------------------*/
+
+	@import url(http://fonts.googleapis.com/css?family=Source%20Sans%20Pro:300,400,500,600,700);
+
+	p {
+		font-family: 'Roboto', sans-serif;
+		font-size: 14px;
+		line-height: 22.4px;
+		color: #000000;
+		font-weight: 300;
+
+	}
+
+	h1 {
+		font-size: 16px;
+		color: #2d3033;
+		font-family: 'rz', sans-serif;
+	}
+
+	h2 {
+		font-size: 65px;
+		color: black;
+		font-family: 'Lato', sans-serif;
+	}
+
+	h3 {
+		font-size: 28px;
+		color: #2d3033;
+		font-weight: 300;
+		font-family: 'Lato', sans-serif;
+	}
+
+	h4 {
+		font-size: 22px;
+		color: #000000;
+		letter-spacing: 0.5px;
+		color: #ffffff;
+		font-family: 'Major Mono Display', monospace;
+	}
+
+	h5 {
+		font-size: 15px;
+		color: rgb(33, 97, 216);
+		font-weight: 500;
+		letter-spacing: 1px;
+		font-family: 'lato', sans-serif;
+		text-transform: uppercase;
+
+	}
+
+	h6 {
+		font-size: 13px;
+		line-height: 20px;
+		font-family: "roboto", 'Open Sans', 'Helvetica Neue', sans-serif;
+		color: black;
+		font-weight: 300;
+	}
+
+	.btn {
+		background-color: rgb(33, 97, 216);
+		color: #fff;
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 5px;
+		border: 0;
+		border-radius: 2px;
+		display: inline-block;
+		text-transform: uppercase;
+
+	}
+
+	.btn:hover,
+	.btn:focus {
+		background-color: #3d3d3d;
+		color: #fff;
+	}
+
+	.btn-large {
+		padding: 15px 40px;
+	}
+
+	/* ------------------------------------------------------------------------------
+	Global Styles
+	-------------------------------------------------------------------------------*/
+	a {
+		color: #888278;
+	}
+
+	a:hover,
+	a:focus {
+		text-decoration: none;
+		transition: background-color, color, 0.3s;
+	}
+
+	body {
+		font-weight: 400;
+		color: #6c7279;
+	}
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul li {
+		list-style: none;
+	}
+
+	.section {
+		padding: 100px 0;
+	}
+
+	.no-padding {
+		padding: 0;
+	}
+
+	.no-gutter [class*=col-] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.space {
+		margin-top: 60px;
+	}
+
+	/* ------------------------------------------------------------------------------
+	 Header
+	-------------------------------------------------------------------------------*/
+	#header {
+		position: fixed;
+		width: 100%;
+		z-index: 999;
+	}
+
+	#header .header-content {
+		margin: 0 auto;
+		max-width: 1170px;
+		padding: 60px 0;
+		width: 100%;
+		transition: padding 0.3s;
+	}
+
+	#header .logo {
+		float: left;
+	}
+
+	.logo_blå {
+		position: fixed;
+		float: left;
+	}
+
+	#header.fixed {
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	#header.fixed .header-content {
+		border-bottom: 0;
+		padding: 25px 0;
+	}
+
+	#header.fixed .nav-toggle {
+		top: 18px;
+	}
+
+	.navigation.open {
+		opacity: 0.9;
+		visibility: visible;
+		transition: opacity 0.5s;
+	}
+
+	.navigation {
+		float: right;
+	}
+
+	.navigation li {
+		display: inline-block;
+	}
+
+	.navigation a {
+		color: black;
+		font-size: 11px;
+		font-weight: 600;
+		margin-right: 40px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-family: 'Lato', sans-serif;
+	}
+
+	.navigation a:hover,
+	.navigation a.active {
+		color: lightgray;
+	}
+
+	.nav-toggle {
+		display: none;
+		height: 44px;
+		overflow: hidden;
+		position: fixed;
+		right: 5%;
+		text-indent: 100%;
+		top: 50px;
+		white-space: nowrap;
+		width: 44px;
+		z-index: 99999;
+		transition: all 0.3s;
+	}
+
+	.nav-toggle:before,
+	.nav-toggle:after {
+		border-radius: 50%;
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		transition-property: transform;
+	}
+
+	.nav-toggle:before {
+		background-color: #222222;
+		transform: scale(1);
+		transition-duration: 0.3s;
+	}
+
+	.nav-toggle:after {
+		background-color: #222222;
+		transform: scale(0);
+		transition-duration: 0s;
+	}
+
+	.nav-toggle span {
+		background-color: #fff;
+		bottom: auto;
+		display: inline-block;
+		height: 3px;
+		left: 50%;
+		position: absolute;
+		right: auto;
+		top: 50%;
+		width: 18px;
+		z-index: 10;
+		transform: translateX(-50%) translateY(-50%);
+	}
+
+	.nav-toggle span:before,
+	.nav-toggle span:after {
+		background-color: #fff;
+		content: "";
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+		transform: translateZ(0);
+		backface-visibility: hidden;
+		transition: transform 0.3s;
+	}
+
+	.nav-toggle span:before {
+		transform: translateY(-6px) rotate(0deg);
+	}
+
+	.nav-toggle span:after {
+		transform: translateY(6px) rotate(0deg);
+	}
+
+	.nav-toggle.close-nav:before {
+		transform: scale(0);
+	}
+
+	.nav-toggle.close-nav:after {
+		transform: scale(1);
+	}
+
+	.nav-toggle.close-nav span {
+		background-color: rgba(255, 255, 255, 0);
+	}
+
+	.nav-toggle.close-nav span:before,
+	.nav-toggle.close-nav span:after {
+		background-color: #fff;
+	}
+
+	.nav-toggle.close-nav span:before {
+		transform: translateY(0) rotate(45deg);
+	}
+
+	.nav-toggle.close-nav span:after {
+		transform: translateY(0) rotate(-45deg);
+	}
+
+	/* ------------------------------------------------------------------------------
+	 Banner
+	-------------------------------------------------------------------------------*/
+
+	.banner {
+		max-height: 100vh;
+		background-color: rgb(33, 97, 216);
+		z-index: -10;
+	}
+
+
+	.banner-text {
+		padding-top: 10%;
+	}
+
+	.banner-text h1 {
+		color: white;
+		font-family: 'Lato', sans-serif;
+		font-size: 300px;
+		padding-top: 200px;
+		padding-bottom: 30px;
+		text-align: left;
+		letter-spacing: 2px;
+		font-weight: 100;
+	}
+
+	.fem {
+		position: absolute;
+		color: rgb(255, 255, 255);
+		font-family: 'Major Mono Display', monospace;
+		font-size: 200px;
+		text-align: left;
+		letter-spacing: 2px;
+		margin-left: 25%;
+		margin-right: 80%;
+		margin-top: 15%;
+
+		animation: slow 1s linear 1s, fast 1s linear 1s, slow2 1.5s linear 1s;
+		animation-iteration-count: 1;
+	}
+
+	@-keyframes slow {
+		from {
+			transform: rotate(0deg)
+		}
+
+		to {
+			transform: rotate(90deg)
+		}
+	}
+
+	@-keyframes fast {
+		from {
+			transform: rotate(91deg)
+		}
+
+		to {
+			transform: rotate(270deg)
+		}
+	}
+
+	@-webkit-keyframes slow2 {
+		from {
+			transform: rotate(271deg)
+		}
+
+		to {
+			transform: rotate(359deg)
+		}
+	}
+
+
+	.syv {
+		position: relative;
+		color: black;
+		font-family: 'Lato', sans-serif;
+		font-size: 600px;
+		letter-spacing: 2px;
+		margin-left: 20%;
+		margin-right: 80%;
+		margin-top: -15%;
+		margin-bottom: -10%;
+		font-family: 'Major Mono Display', monospace;
+
+		animation-name: fadeInOut;
+		animation-delay: 4s;
+		animation-duration: 9s;
+		animation-iteration-count: 1;
+
+		@keyframes topFadeOut {
+			0% {
+				position: absolute;
+				top: -3rem;
+				opacity: 0;
+			}
+
+			90% {
+				position: absolute;
+				top: 25%;
+				opacity: 1;
+			}
+
+			100% {
+				opacity: 0;
+			}
+		}
+	}
+
+	@keyframes fadeInOut {
+		0% {
+			opacity: 0;
+		}
+
+		90% {
+			opacity: 1;
+		}
+
+		100% {
+			opacity: 0%;
+		}
+	}
+
+
+	.subhead1 {
+		font-family: 'Major Mono Display', monospace;
+		color: white;
+		font-size: 50px;
+		text-align: left;
+		margin-left: 600px;
+		position: absolute;
+		margin-top: -380px;
+		padding: 10px;
+
+	}
+
+	.subhead2 {
+		font-family: 'Major Mono Display', monospace;
+		color: rgba(255, 255, 255, 0.74);
+		font-size: 50px;
+		text-align: left;
+		margin-left: 580px;
+		position: absolute;
+		margin-top: -330px;
+		padding: 10px;
+
+	}
+
+	.subhead3 {
+		font-family: 'Major Mono Display', monospace;
+		color: black;
+		font-size: 50px;
+		text-align: left;
+		margin-left: 530px;
+		position: absolute;
+		margin-top: -310px;
+		padding: 40px 20px 20px 40px;
+
+	}
+
+	.parent {
+		width: 250px;
+		height: 125px;
+	}
+
+	.box {
+		width: 100px;
+		height: 100px;
+		background-color: rgb(33, 97, 216);
+		font-size: 20px;
+		left: 0px;
+		top: 50px;
+		position: absolute;
+		transition-property: width height font-size left top;
+		transition-duration: 1s;
+		transition-timing-function: ease-in-out;
+	}
+
+	.box1 {
+		transform: rotate(270deg);
+		width: 50px;
+		height: 50px;
+		color: rgb(255, 255, 255);
+		font-size: 65px;
+		letter-spacing: 1px;
+		font-family: 'Major Mono Display', monospace;
+		left: 150px;
+		top: 500px;
+		position: absolute;
+		transition-property: width height font-size left top;
+		transition-duration: 1s;
+		transition-timing-function: ease-in-out;
+	}
+
+	.banner-text p {
+		color: rgb(33, 97, 216);
+		font-family: 'Lato', sans-serif;
+		font-size: 500px;
+		font-weight: 300;
+		letter-spacing: 2px;
+		margin-bottom: 130px;
+		text-transform: uppercase;
+		text-align: left;
+	}
+
+	.banner-btn {
+		z-index: 100;
+	}
+
+	/* ------------------------------------------------------------------------------
+	 Tjenester
+	-------------------------------------------------------------------------------*/
+	#intro-tjenester {
+		margin-top: 100px;
+		margin-bottom: 50px;
+	}
+
+	.person {
+		max-width: 270px;
+		text-align: center;
+	}
+
+	.person-content {
+		padding-top: 30px;
+	}
+
+	.person h4 {
+		font-weight: 400;
+	}
+
+	.person h5 {
+		color: rgb(33, 97, 216);
+		font-size: 12px;
+		font-weight: 600;
+		margin-bottom: 20px;
+	}
+
+	.social-icons,
+	.footer .footer-share {
+		margin-top: 30px;
+	}
+
+	.social-icons li,
+	.footer .footer-share li {
+		display: inline-block;
+		float: none;
+	}
+
+	.social-icons a,
+	.footer .footer-share a {
+		border: 1px solid rgb(33, 97, 216);
+		border-radius: 50%;
+		color: rgb(33, 97, 216);
+		display: block;
+		font-size: 14px;
+		height: 32px;
+		line-height: 32px;
+		margin-right: 5px;
+		text-align: center;
+		width: 32px;
+	}
+
+	.social-icons a:hover,
+	.footer .footer-share a:hover {
+		background-color: #000000;
+		border-color: #000000;
+		color: #fff;
+	}
+
+
+	.tjenester-section {
+		padding-top: 100px;
+	}
+
+	.tjenester {
+		margin-bottom: 50px;
+	}
+
+
+	.tjenester .icon {
+		color: #000000;
+		font-size: 36px;
+		padding-left: 15px;
+	}
+
+
+	/* ------------------------------------------------------------------------------
+	Arbeider
+-------------------------------------------------------------------------------*/
+
+
+	.banner-btn {
+		margin-left: 50%;
+		margin-right: 50%;
+	}
+
+	#intro-arbeider {
+		margin-top: 150px;
+		margin-top: 50px;
+	}
+
+	.intro {
+		background-color: rgb(0, 0, 0);
+		position: relative;
+	}
+
+	.intro blockquote {
+		border: 0;
+		margin: 0;
+		padding: 50px 15% 0;
+	}
+
+	.intro h1 {
+		color: rgb(33, 97, 216);
+		font: 17px;
+		font-family: 'Lato', sans-serif;
+		letter-spacing: 1px;
+	}
+
+	.intro p {
+		color: rgb(255, 255, 255);
+		font-family: "roboto", sans-serif;
+		display: block;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 300;
+		margin-top: 30px;
+	}
+
+	#arbeider {
+		margin: 100px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 800;
+	}
+
+	blockquote a {
+		font-family: 'Lato', sans-serif;
+		font-size: 16px;
+		font-weight: 300;
+		color: black;
+		font-size: 16px;
+
+	}
+
+	/* ------------------------------------------------------------------------------
+	Kontakt
+-------------------------------------------------------------------------------*/
+	#kontakt-section {
+		height: 100%vh;
+	}
+
+	.kontakt {
+		text-align: left;
+		font-size: 30px;
+		line-height: 45px;
+		margin: 20% 40% 30% 30%;
+		color: black;
+		font-family: 'Major Mono Display', monospace;
+		font-weight: 100px;
+	}
+
+	.epost {
+		color: rgb(33, 97, 216);
+	}
+
+
+	/* ------------------------------------------------------------------------------
+	 Footer
+-------------------------------------------------------------------------------*/
+	.footer {
+		background-color: white;
+		text-align: left;
+		font-family: 'Lato', sans-serif;
+		color: white;
+		font-weight: 300;
+		padding: 30px;
+	}
+
+	.footer-top {
+		background-color: white;
+		padding-top: 300px;
+		height: 800px;
+	}
+
+	.footer-bottom {
+		background-color: white;
+	}
+
+	.footer .footer-col {
+		margin-bottom: 80px;
+		margin-left: -20px;
+	}
+
+	.footer h5 {
+		color: #fff;
+	}
+
+	.footer h5 {
+		margin-bottom: 20px;
+	}
+
+	.footer p {
+		color: rgb(182, 182, 182);
+		font-weight: 300;
+		font-size: 13px;
+	}
+
+	.footer a {
+		color: white;
+	}
+
+	.footer a:hover {
+		color: rgb(146, 146, 146);
+	}
+
+	.footer .footer-share {
+		margin-top: 0;
+	}
+
+	.footer .footer-share li {
+		display: inline-block;
+		float: none;
+	}
+
+	.footer .footer-share a {
+		border: none;
+		font-size: 21px;
+		color: lightgrey;
+	}
