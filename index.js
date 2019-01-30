@@ -35,5 +35,5 @@ setTimeout( function() {
         animation: "fade",
         directionNav: false,
     });
-}, 1000 );
+}, 2000 );
 

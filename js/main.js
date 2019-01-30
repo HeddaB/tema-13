@@ -70,6 +70,7 @@ function updateTransition() {
 	return el;
   }
   
-  var intervalID = window.setInterval(updateTransition, 3000);
+  setTimeout(updateTransition, 3000);
+  // var intervalID = window.setInterval(updateTransition, 3000);
 
   
