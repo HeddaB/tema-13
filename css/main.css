@@ -462,7 +462,8 @@
 	.box {
 		width: 100px;
 		height: 100px;
-		background-color: rgb(33, 97, 216);
+		color: rgb(33, 97, 216);
+		font-family: 'Major Mono Display', monospace;
 		font-size: 20px;
 		left: 0px;
 		top: 50px;
